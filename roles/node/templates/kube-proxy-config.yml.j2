@@ -5,9 +5,9 @@ metricsBindAddress: {{ inventory_hostname }}:10249
 clientConnection:
   kubeconfig: {{ k8s_work_dir }}/cfg/kube-proxy.kubeconfig
 hostnameOverride: {{ node_name }} 
-clusterCIDR: {{ service_cidr }}
+clusterCIDR: {{ pod_cidr }}
 mode: ipvs
 ipvs:
   scheduler: "rr"
 iptables:
-  masqueradeAll: true
+  masqueradeAll: false
